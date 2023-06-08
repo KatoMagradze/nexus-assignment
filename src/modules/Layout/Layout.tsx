@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { Tabs } from "../../components/Tabs/Tabs";
+import { Connection, Icon, Tabs } from "../../components/index";
 import {
   IManagementItem,
   ManagementItem,
 } from "./ManagementItem/ManagementItem";
-import { Icon } from "../../components/index";
 import { PersonCard } from "./PersonCard/PersonCard";
 import Person from "../../assets/jpg/Person.jpg";
-import { Connection } from "../../components/Connection/Connection";
 
 const managementItems: IManagementItem[] = [
   {
@@ -66,8 +64,6 @@ export const Layout = () => {
         : prev[activeTab].filter((itemId) => itemId !== id),
     }));
   };
-
-  console.log(selectedActives[activeTab], "selectedActives");
 
   return (
     <>
