@@ -22,9 +22,9 @@ export const ManagementItem: React.FC<IManagementComponent> = ({
 }) => {
   return (
     <div
-      className={`flex justify-between items-center w-[280px] rounded-xl ${
+      className={`flex justify-between items-center rounded-xl ${
         active ? "border-2 border-primary p-[15px]" : "border border-grey p-4"
-      }`}
+      } lg:w-[280px]`}
     >
       <div className={"flex justify-center items-center gap-2"}>
         {icon}

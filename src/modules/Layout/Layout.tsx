@@ -87,11 +87,15 @@ export const Layout = () => {
           },
         ]}
         defaultActiveTabKey={"small"}
-        className={"mb-[69px]"}
+        className={"mb-[69px] w-full"}
         onChange={(active) => setActiveTab(active)}
       />
-      <div className={"flex justify-center items-end"}>
-        <div className={"flex flex-col gap-5"}>
+      <div
+        className={
+          "flex flex-col justify-center items-center gap-5 max-w-[324px] lg:flex-row lg:items-end lg:gap-0 lg:max-w-full"
+        }
+      >
+        <div className={"flex-col gap-5 hidden lg:flex"}>
           {managementItems.slice(0, 3).map((item) => {
             return (
               <ManagementItem
@@ -108,7 +112,7 @@ export const Layout = () => {
         </div>
 
         <Connection
-          className={"self-center"}
+          className={"self-center hidden lg:block"}
           activeItems={selectedActives[activeTab]}
           isLeft
         />
@@ -123,11 +127,11 @@ export const Layout = () => {
         />
 
         <Connection
-          className={"self-center scale-x-[-1]"}
+          className={"self-center scale-x-[-1] hidden lg:block"}
           activeItems={selectedActives[activeTab]}
         />
 
-        <div className={"flex flex-col gap-5"}>
+        <div className={"flex flex-col gap-5 w-full"}>
           {managementItems.slice(3, 6).map((item) => {
             return (
               <ManagementItem
