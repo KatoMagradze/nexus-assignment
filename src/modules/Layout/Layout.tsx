@@ -7,6 +7,7 @@ import {
 import { Icon } from "../../components/index";
 import { PersonCard } from "./PersonCard/PersonCard";
 import Person from "../../assets/jpg/Person.jpg";
+import { Connection } from "../../components/Connection/Connection";
 
 const managementItems: IManagementItem[] = [
   {
@@ -66,6 +67,8 @@ export const Layout = () => {
     }));
   };
 
+  console.log(selectedActives[activeTab], "selectedActives");
+
   return (
     <>
       <Tabs
@@ -87,7 +90,7 @@ export const Layout = () => {
         className={"mb-[69px]"}
         onChange={(active) => setActiveTab(active)}
       />
-      <div className={"flex justify-center items-end gap-[120px]"}>
+      <div className={"flex justify-center items-end"}>
         <div className={"flex flex-col gap-5"}>
           {managementItems.slice(0, 3).map((item) => {
             return (
@@ -104,6 +107,12 @@ export const Layout = () => {
           })}
         </div>
 
+        <Connection
+          className={"self-center"}
+          activeItems={selectedActives[activeTab]}
+          isLeft
+        />
+
         <PersonCard
           name={"Lauren Robson"}
           specialization={"HR Director"}
@@ -111,6 +120,11 @@ export const Layout = () => {
             "“I want to lower PTO liability and keep my employees happy. I want to lower PTO liability.”"
           }
           image={Person}
+        />
+
+        <Connection
+          className={"self-center scale-x-[-1]"}
+          activeItems={selectedActives[activeTab]}
         />
 
         <div className={"flex flex-col gap-5"}>

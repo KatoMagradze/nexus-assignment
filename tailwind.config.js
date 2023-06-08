@@ -14,9 +14,13 @@ export default {
         grey: "#E8E6EC",
         darkgrey: "#A39CB5",
         "primary-light": "#F2EFFE",
+        connection: "#D7CFFD",
       },
       fontSize: {
         "6xl": "4rem",
+      },
+      screens: {
+        lg: "1124px",
       },
     },
   },
