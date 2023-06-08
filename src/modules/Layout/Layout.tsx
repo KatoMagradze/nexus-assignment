@@ -46,17 +46,23 @@ const managementItems: IManagementItem[] = [
   },
 ];
 
-type TabType = "small" | "medium" | "enterprise";
+export type TabType = "small" | "medium" | "enterprise";
+
+interface ISelectedActives {
+  small: number[];
+  medium: number[];
+  enterprise: number[];
+}
 
 export const Layout = () => {
   const [activeTab, setActiveTab] = useState<TabType>("small");
-  const [selectedActives, setSelectedActives] = useState({
+  const [selectedActives, setSelectedActives] = useState<ISelectedActives>({
     small: [],
     medium: [],
     enterprise: [],
   });
 
-  const handleToggle = (active, id) => {
+  const handleToggle = (active: boolean, id: number) => {
     setSelectedActives((prev) => ({
       ...prev,
       [activeTab]: active
@@ -84,7 +90,7 @@ export const Layout = () => {
         ]}
         defaultActiveTabKey={"small"}
         className={"mb-[69px] w-full"}
-        onChange={(active) => setActiveTab(active)}
+        onChange={(activeTabKey) => setActiveTab(activeTabKey)}
       />
       <div
         className={

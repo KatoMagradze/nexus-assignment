@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 interface ITabItem {
-  key: number;
+  key: any;
   label: string;
 }
 
@@ -9,7 +9,7 @@ interface ITabs {
   tabItems: ITabItem[];
   defaultActiveTabKey: any;
   className?: string;
-  onChange?: (activeTab: any) => void;
+  onChange?: (activeTabKey: any) => void;
 }
 
 export const Tabs: React.FC<ITabs> = ({
@@ -18,11 +18,11 @@ export const Tabs: React.FC<ITabs> = ({
   className,
   onChange,
 }) => {
-  const [activeTab, setActiveTab] = useState(defaultActiveTabKey);
+  const [activeTab, setActiveTab] = useState<any>(defaultActiveTabKey);
 
-  const handleTabClick = (active) => {
-    onChange?.(active);
-    setActiveTab(active);
+  const handleTabClick = (activeTabKey: any) => {
+    onChange?.(activeTabKey);
+    setActiveTab(activeTabKey);
   };
 
   return (
