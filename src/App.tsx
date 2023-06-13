@@ -1,6 +1,5 @@
 import "./App.css";
-import React from "react";
-import { Layout, Heading } from "./modules/index";
+import RemoteComponent from "./RemoteComponent";
 
 function App() {
   return (
@@ -9,10 +8,7 @@ function App() {
         "bg-white min-h-screen flex justify-center items-center p-0 xs:p-10"
       }
     >
-      <div className={"flex flex-col justify-center items-center w-full"}>
-        <Heading />
-        <Layout />
-      </div>
+      <RemoteComponent />
     </div>
   );
 }
