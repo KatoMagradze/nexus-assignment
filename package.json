@@ -4,12 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port=5001 --strictPort",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview --port=5001 --strictPort",
+    "deploy": "npm run build && npm run preview"
   },
   "dependencies": {
+    "@originjs/vite-plugin-federation": "^1.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
